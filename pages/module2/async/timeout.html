@@ -1,0 +1,41 @@
+
+<h2>Таймеры</h2>
+
+<ul class="list-point">
+    <li><u-code-text>setTimeout()</u-code-text> - однократное выполнение кода</li>
+</ul>
+<v-code lang="js" title="">
+const timer = <u-code>setTimeout</u-code>(function() { 
+	console.log('go'); 
+}, 1000);
+
+<u-code>clearTimeout</u-code>(timer);
+</v-code>
+
+
+<ul class="list-point">
+    <li><u-code-text>setInterval()</u-code-text> - многократное выполнение кода</li>
+</ul>
+<v-code lang="js" title="">
+const timer = <u-code>setInterval</u-code>(function() { 
+	console.log('go'); 
+}, 1000);
+
+<u-code>clearInterval</u-code>(timer);
+</v-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Примеры</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-code lang="js" title="">
+console.log(1);
+
+setTimeout(function() { 
+	console.log(2); 
+}, 0);
+
+console.log(3);
+
+// => 1, 3, 2
+</v-code>
+

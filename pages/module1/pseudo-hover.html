@@ -1,0 +1,21 @@
+<h2>Псевдоклассы (hover, not, focus, active, visited, link)</h2>
+
+<v-code lang="bash" title="">
+<em>a:hover</em>        # наведение на элемент
+<em>a:not(:hover)</em>  # увод с элемента
+<em>a:active</em>       # активный элемент 
+<em>a:focus</em>        # элемент в фокусе
+<em>a:visited</em>      # посещеннае ссылки
+<em>a:link</em>         # не посещенные ссылки
+</v-code>
+
+<v-code lang="css" title="">
+a:hover {
+	background: orange;
+	transition: 0.4s;
+}
+a:not(:hover) {
+	transition: 0.4s;
+}
+</v-code>
+

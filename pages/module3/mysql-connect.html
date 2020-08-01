@@ -1,0 +1,126 @@
+<h2>Работа с MySQL</h2>
+
+<ul class="list-point">
+    <li>подключение (dbConnect.php)</li>
+    <li>выборка данных (dbSelect.php)</li>
+    <li>вставка, обновление, удаление данных (dbModify.php)</li>
+</ul>
+
+<!------------------------------------------------------------->
+<h4>dbConnect.php</h4>
+<!------------------------------------------------------------->
+<v-code lang="php" title="">
+&lt;?php
+	$host = 'localhost';
+	$user = 'root';
+	$pass = '';
+	$db = 'sample';
+
+    $link = mysqli_connect($host, $user, $pass, $db); 
+    mysqli_set_charset($link, 'utf8');           
+    if(!$link) {
+        exit(mysqli_error($link));
+    } 
+?&gt;
+</v-code>
+
+<!------------------------------------------------------------->
+<h4>dbModify.php</h4>
+<!------------------------------------------------------------->
+<v-code lang="php" title="">
+&lt;?php
+	include('dbConnect.php');
+
+	$sql = $_GET[sql];
+	$query = mysqli_query($link, $sql);
+	$insert_id = mysqli_insert_id($link);
+
+	$arr = array($query, $insert_id);
+	echo json_encode($arr);
+?&gt;
+</v-code>
+
+<!------------------------------------------------------------->
+<h4>dbSelect.php</h4>
+<!------------------------------------------------------------->
+<v-code lang="php" title="">
+&lt;?php
+	include('dbConnect.php');
+	
+	$sql = $_GET[sql];
+	$query = mysqli_query($link, $sql);
+	$num_rows = mysqli_num_rows($query);
+	$arr = array();
+
+	if ($num_rows != 0) {
+		while($row = mysqli_fetch_array($query)) {
+			array_push($arr, $row);
+		}
+	}
+
+	echo json_encode($arr);
+?&gt;
+</v-code>
+
+<!------------------------------------------------------------->
+<h4>main.js</h4>
+<!------------------------------------------------------------->
+<v-code lang="js" title="">
+dbInsert();
+function dbInsert() {
+	var name = 'Добавлено имя из JS';
+	var price = 12;
+	var description = 'Добавлено описание из JS';
+	var sql = `INSERT INTO products(NAME, PRICE, DESCRIPTION) VALUES ('${name}', ${price}, '${description}')`;
+	$.get('php/dbModify.php', {sql:sql}, function(data){
+		var arr = eval(data);
+		alert(arr[]);
+	});
+}
+</v-code>
+
+<v-code lang="js" title="">
+dbUpdate();
+function dbUpdate() {
+	var id = 5;
+	var name = 'Обновлено имя из JS';
+	var price = 44;
+	var description = 'Обновлено описание из JS';
+	var sql = `UPDATE products SET NAME='${name}', PRICE=${price}, DESCRIPTION='${description}' WHERE ID=${id}`;
+	$.get('php/dbModify.php', {sql:sql}, function(data){
+		var arr = eval(data);
+		alert(arr[]);
+	});
+}
+</v-code>
+
+<v-code lang="js" title="">
+dbDelete();
+function dbDelete() {
+	var id = 5;
+	var sql = `DELETE FROM products WHERE ID=${id}`;
+	$.get('php/dbModify.php', {sql:sql}, function(data){
+        var arr = eval(data);
+        alert(arr[0]);
+	});
+}
+</v-code>
+
+<v-code lang="js" title="">
+dbSelect();
+function dbSelect() {
+	var sql = `SELECT * FROM products`;
+	$.get('php/dbSelect.php', {sql:sql}, function(data){
+		var arr = eval(data); 
+		if (arr.length != 0) {
+			for (var i=0; i<=arr.length-1; i++) {
+				var id          = arr[i]['ID'];
+				var name        = arr[i]['NAME'];
+				var price       = arr[i]['PRICE'];
+				var description = arr[i]['DESCRIPTION'];
+				$('body').append(`&lt;p&gt;${id} ${name} ${price} ${description}&lt;/p&gt;`);
+			}
+		}	
+	});
+}
+</v-code>

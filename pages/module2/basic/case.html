@@ -1,0 +1,81 @@
+<h2>Условные операторы</h2>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Операторы сравнения</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-code lang="bash" title="">
+=     # присвоить
+==    # равно
+===   # тождественно равно
+!     # отрицание
+!==   # неравно
+>     # больше
+<     # меньше
+>=    # больше или равно
+<=    # меньше или равно
+&&    # логическое «И» 
+||    # логическое «ИЛИ»
+</v-code>
+
+<v-code lang="js" title="">
+console.log(5 == 5);    // true
+console.log(5 == '5');  // true
+
+console.log(5 === 5);   // true
+console.log(5 === '5'); // false
+
+console.log(5 > 5);     // false
+console.log(5 < 5);     // false
+console.log(5 >= 5);    // true
+console.log(5 <= 5);    // true
+</v-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Условный оператор if</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+<!------------------------------------------------------------->
+<h4>Одно условие</h4>
+<!------------------------------------------------------------->
+<v-code lang="js" title="">
+const weather = 'хорошая';
+
+if(weather === 'хорошая') {
+	console.log('Идём гулять');
+} else {
+	console.log('Идём в кино');
+}
+</v-code>
+
+<!------------------------------------------------------------->
+<h4>Несколько условий</h4>
+<!------------------------------------------------------------->
+<v-code lang="js" title="">
+const weather = 'хорошая'; // хорошая погода
+const mood = true;         // хорошее настроение
+
+if( (weather === 'хорошая') && (mood) ) {
+    console.log('Идём гулять');
+} else {
+    console.log('Идём в кино');
+}
+</v-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Условный оператор switch</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-code lang="js" title="">
+const id = 3;
+
+switch(Number(id)) {
+	case 1: console.log(id); break;
+	case 2: console.log(id); break;
+	case 3: console.log(id); break;
+	default: console.log('default');
+}
+</v-code>
+
+<u-link-wrapper>
+	<a href="https://learn.javascript.ru/ifelse#operator-voprositelnyy-znak" target="_blank">Тернарный оператор</a>
+	<a href="https://learn.javascript.ru/comparison" target="_blank">Операторы сравнения и логические значения</a>
+</u-link-wrapper>

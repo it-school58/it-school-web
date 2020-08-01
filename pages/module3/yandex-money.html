@@ -1,0 +1,49 @@
+<h2>API ЯндексДеньги. Система оплаты на сайт</h2>
+
+<u-link-wrapper>
+	<a href="https://tech.yandex.ru/" target="_blank">Технологии Яндекса</a>
+	<a href="https://tech.yandex.ru/money/" target="_blank">API форм и кнопок</a>
+	<a href="https://money.yandex.ru/settings?w=inform" target="_blank">Настройка отправки уведомления на e-mail</a>
+	<a href="https://money.yandex.ru/myservices/online.xml" target="_blank">Настройка отправки уведомления в php</a>
+</u-link-wrapper>
+
+<!------------------------------------------------------------->
+<h4>index.html</h4>
+<!------------------------------------------------------------->
+<v-code lang="html" title="">
+&lt;form method="POST" action="https://money.yandex.ru/quickpay/confirm.xml"&gt;
+	&lt;input type="hidden" name="receiver"      value="410011498839870"&gt;
+	&lt;input type="hidden" name="quickpay-form" value="shop"&gt;
+	&lt;input type="hidden" name="targets"       value="Оплата в магазине webpanda (targets)"&gt;
+	&lt;input type="hidden" name="sum"           value="2"&gt;
+	&lt;label&gt;&lt;input type="radio" name="paymentType" value="PC"&gt;Яндекс.Деньгами&lt;/label&gt;
+	&lt;label&gt;&lt;input type="radio" name="paymentType" value="AC"&gt;Банковской картой&lt;/label&gt;
+	&lt;label&gt;&lt;input type="radio" name="paymentType" value="PC"&gt;С баланса мобильного&lt;/label&gt;
+	&lt;input type="hidden" name="formcomment"   value="Товар #1 (formcomment)"&gt;
+	&lt;input type="hidden" name="short-dest"    value="Товар #1 (short-dest)"&gt;
+	&lt;input type="hidden" name="label"         value="Товар #1 (id)"&gt;
+	&lt;input type="hidden" name="comment"       value="Товар #1 (comment)"&gt;
+	&lt;input type="hidden" name="successURL"    value="http://ct66716.tmweb.ru/success.html"&gt;
+	&lt;input type="hidden" name="need-fio"      value="false"&gt;
+	&lt;input type="submit" value="Оплатить"&gt;
+&lt;/form&gt;
+</v-code>
+
+<!------------------------------------------------------------->
+<h4>notification.php</h4>
+<!------------------------------------------------------------->
+<v-code lang="php" title="">
+&lt;?php
+	$label = $_POST['label']; 
+	$file = fopen('notification.txt', 'w');
+	fwrite($file, $label);
+	fclose($file);
+?&gt;
+</v-code>
+
+<!------------------------------------------------------------->
+<h4>success.html</h4>
+<!------------------------------------------------------------->
+<v-code lang="html" title="">
+&lt;h1&gt;Успешно!&lt;/h1&gt;
+</v-code>

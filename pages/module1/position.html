@@ -1,0 +1,40 @@
+<h2>Позиционирование блочных элементов (position)</h2>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Виды позиционирования</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-code lang="css" title="">
+div {
+	position: static;    <u-code-comment># статичное (стандартное позиционирование)</u-code-comment>
+	position: relative;  <u-code-comment># относительное (положение устанавливается относительно его исходного места)</u-code-comment>
+	position: absolute;  <u-code-comment># абсолютное (отсчёт координат ведётся от края окна браузера, если у родителя не установлено position: relative)</u-code-comment>
+	position: fixed;     <u-code-comment># фиксированное (привязывается к указанной свойствами left, top, right, bottom и точке на экране)</u-code-comment>
+	position: sticky;    <u-code-comment># липкое (сочетание относительного и фиксированного позиционирования)</u-code-comment>
+}
+</v-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Свойства left, right, top, bottom</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<ul class="list-point">
+    <li>Применяются для всех видов позиционирования кроме static</li>
+</ul>
+
+<v-code lang="css" title="">
+div {
+	position: relative;
+	top: 100px;
+	left: 70px;
+}
+</v-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Парядок расположения элементоы (z-index)</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<img src="img/css/z-index.png" height="200">
+
+<v-code lang="css" title="">
+div {
+	z-index: 1;
+}
+</v-code>

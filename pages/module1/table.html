@@ -1,0 +1,152 @@
+<h2>Табличные элементы (table)</h2>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Теги</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-code lang="bash" title="">
+<em>&lt;table&gt;</em>          # контейнер
+<em>&lt;tr&gt;</em>             # table row (строка)
+<em>&lt;td&gt;</em>             # table data (ячейка)
+<em>&lt;th&gt;</em>             # table header (ячейка заголовка)
+<em>&lt;td rowspan="2"&gt;</em> # объединение строк
+<em>&lt;td colspan="2"&gt;</em> # объединение столбцов 
+</v-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Пример таблицы</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<img src="img/css/table/table1.png" height="170">
+
+<v-code lang="html" title="">
+&lt;table&gt;
+	&lt;tr&gt;
+		&lt;th&gt;Заголовок 1&lt;/th&gt;
+		&lt;th&gt;Заголовок 2&lt;/th&gt;
+		&lt;th&gt;Заголовок 3&lt;/th&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;1 строка 1 столбец&lt;/td&gt;
+		&lt;td&gt;1 строка 2 столбец&lt;/td&gt;
+		&lt;td&gt;1 строка 3 столбец&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;2 строка 1 столбец&lt;/td&gt;
+		&lt;td&gt;2 строка 2 столбец&lt;/td&gt;
+		&lt;td&gt;2 строка 3 столбец&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+</v-code>
+
+<v-code lang="css" title="">
+table {
+  border: 2px solid orange;
+  border-collapse: collapse;
+}
+td, th {
+  border: 2px solid orange;
+  padding: 5px 10px;
+}
+</v-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Объединение строк (rowspan)</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<img src="img/css/table/table2.png" height="170">
+
+<v-code lang="html" title="">
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Заголовок 1&lt;/th&gt;
+        &lt;th&gt;Заголовок 2&lt;/th&gt;
+        &lt;th&gt;Заголовок 3&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td rowspan="2"&gt;1 строка 1 столбец&lt;/td&gt;
+        &lt;td&gt;1 строка 2 столбец&lt;/td&gt;
+        &lt;td&gt;1 строка 3 столбец&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;!--&lt;td&gt;2 строка 1 столбец&lt;/td&gt;--&gt;
+        &lt;td&gt;2 строка 2 столбец&lt;/td&gt;
+        &lt;td&gt;2 строка 3 столбец&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</v-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Объединение столбцов (colspan)</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<img src="img/css/table/table3.png" height="170">
+
+<v-code lang="html" title="">
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Заголовок 1&lt;/th&gt;
+        &lt;th&gt;Заголовок 2&lt;/th&gt;
+        &lt;th&gt;Заголовок 3&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td colspan="2"&gt;1 строка 1 столбец&lt;/td&gt;
+        &lt;!--&lt;td&gt;1 строка 2 столбец&lt;/td&gt;--&gt;
+        &lt;td&gt;1 строка 3 столбец&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;2 строка 1 столбец&lt;/td&gt;
+        &lt;td&gt;2 строка 2 столбец&lt;/td&gt;
+        &lt;td&gt;2 строка 3 столбец&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</v-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Стилизация таблицы</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<img src="img/css/table/table4.png" height="170">
+
+<v-code lang="html" title="">
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Заголовок 1&lt;/th&gt;
+        &lt;th&gt;Заголовок 2&lt;/th&gt;
+        &lt;th&gt;Заголовок 3&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;1 строка 1 столбец&lt;/td&gt;
+        &lt;td&gt;1 строка 2 столбец&lt;/td&gt;
+        &lt;td&gt;1 строка 3 столбец&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;2 строка 1 столбец&lt;/td&gt;
+        &lt;td&gt;2 строка 2 столбец&lt;/td&gt;
+        &lt;td&gt;2 строка 3 столбец&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;3 строка 1 столбец&lt;/td&gt;
+        &lt;td&gt;3 строка 2 столбец&lt;/td&gt;
+        &lt;td&gt;3 строка 3 столбец&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;4 строка 1 столбец&lt;/td&gt;
+        &lt;td&gt;4 строка 2 столбец&lt;/td&gt;
+        &lt;td&gt;4 строка 3 столбец&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</v-code>
+
+<v-code lang="css" title="">
+table {
+	border: 1px solid #ededed;
+	border-collapse: collapse;
+}
+td, th {
+	padding: 5px 15px;
+}
+th {
+	background: #b1dbbb;
+	color: #4c4c4c;
+}
+tr:nth-child(odd) {
+	background: #ededed;
+	color: black;
+}
+</v-code>

@@ -1,0 +1,93 @@
+<h2>Трансформация в CSS (transform). 2D преобразования</h2>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>1. Сдвиг</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-code lang="css" title="translate">
+div {
+	transform: translate(50px, 50px);    <u-code-comment># сдвигает элемент на заданное значение по горизонтали и вертикали (положительное значение сдвигает вправо, отрицательное влево)</u-code-comment>
+	transform: translateX(50px);         <u-code-comment># сдвигает элемент по горизонтали на указанное значение</u-code-comment>
+	transform: translateY(50px);         <u-code-comment># сдвигает элемент по вертикали на указанное значение</u-code-comment>
+	transform: translateZ(50px);         <u-code-comment># сдвигает элемент по оси Z на указанное значение</u-code-comment>
+}
+</v-code>
+
+<ul class="list-point">
+    <li>Один параметр <u>translate()</u>: перемещает элемент вдоль оси х</li>
+    <li>Два параметра <u>translate()</u>: первое значение для оси х, второе для оси у</li>
+</ul>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>2. Поворот</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-code lang="css" title="rotate">
+div {
+	transform: rotate(15deg);     <u-code-comment># поворот</u-code-comment>
+	transform: rotateX(15deg);    <u-code-comment># поворот по оси X</u-code-comment>
+	transform: rotateY(15deg);    <u-code-comment># поворот по оси Y</u-code-comment>
+	transform: rotateZ(15deg);    <u-code-comment># поворот по оси Z</u-code-comment>	
+}
+</v-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>3. Масштабирование</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-code lang="css" title="scale">
+div {
+	transform: scale(1.2);       <u-code-comment># масштабирует элемент по горизонтали и вертикали</u-code-comment>
+	transform: scaleX(1.2);      <u-code-comment># масштабирует элемент по горизонтали</u-code-comment>
+	transform: scaleY(1.2);      <u-code-comment># масштабирует элемент по вертикали</u-code-comment>
+	transform: scaleZ(1.2);      <u-code-comment># масштабирует элемент по оси Z</u-code-comment>	
+}
+</v-code>
+
+<ul class="list-point">
+    <li>Один параметр scale(): изменение размеров элемента одинаково по высоте и ширине</li>
+    <li>Два параметра scale(): первое значение изменяет размер элемента по горизонтали, второе по вертикали</li>
+</ul>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>4. Наклон (Искажение)</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-code lang="css" title="skew">
+div {
+	transform: skew(15deg);
+	transform: skewX(15deg);     <u-code-comment># наклоняет элемент на заданный угол по вертикали</u-code-comment>
+	transform: skewY(15deg);     <u-code-comment># наклоняет элемент на заданный угол по горизонтали</u-code-comment>
+}
+</v-code>
+
+<ul class="list-point">
+    <li>Один параметр: элемент искажается по горизонтали</li>
+    <li>Два параметра: первое значение искажает элемент по горизонтали, второе по вертикали</li>
+</ul>
+
+<v-code lang="css" title="Несколько операций">
+div {
+	transform: translate(50px, 50px) rotate(15deg); 
+}
+</v-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Особенности</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<ul class="list-point">
+    <li>Не прерывает поток (не влияют на другие элементы)</li>
+    <li>Трансформации можно записывать несколько через пробел</li>
+</ul>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>CSS Emergent Block (Transform)</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-iframe height="350" src="https://codepen.io/Sergeenkov/embed/KBqwQX?height=265&theme-id=default&default-tab=css,result" />
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Hamburger Animation Menu (Transform)</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-iframe height="350" src="https://codepen.io/Sergeenkov/embed/JZpEBL?height=265&theme-id=default&default-tab=css,result" />
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>CSS Scale Overflow</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-iframe height="350" src="https://codepen.io/Sergeenkov/embed/eKMmaL?height=265&theme-id=default&default-tab=css,result" />
+

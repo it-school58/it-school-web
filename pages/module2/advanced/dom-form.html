@@ -1,0 +1,51 @@
+<h2>Выборка элементов формы</h2>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>input type="text"</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-code lang="js" title="">
+const a = element.value;
+element.value = 'new value';
+</v-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>input type="checkbox"</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-code lang="js" title="">
+const a = element.checked; 
+element.checked = true;
+</v-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>input type="radio"</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-code lang="html" title="">
+&lt;input type="radio" name="radio" value="r1"&gt;
+&lt;input type="radio" name="radio" value="r2"&gt;
+&lt;input type="radio" name="radio" value="r3"&gt;
+</v-code>
+
+<v-code lang="js" title="">
+const radio = document.querySelectorAll('input[type="radio"]');
+
+for(let i=0; i<=radio.length-1; i++) {
+	if(radio[i].checked) {
+		let value = radio[i].getAttribute('value');
+		console.log(value);
+	}
+}
+</v-code>
+
+<v-code lang="js" title="">
+radio.disabled = true;   
+</v-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>select</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-code lang="js" title="">
+const select = document.querySelector('select');
+const a = select.value;
+const a = select.options[select.selectedIndex].value;
+const a = select.options[select.selectedIndex].text;
+</v-code>

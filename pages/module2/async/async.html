@@ -1,0 +1,93 @@
+<h2>Async Function (ES2017)</h2>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Объявление</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-two-code type="js;js" comment="Стрелочная;Обычная">
+<template v-slot:first>
+const foo = async () => {
+    const a = await AsyncFunction();
+};
+</template>
+<template v-slot:last>
+async function foo() {
+    const a = await AsyncFunction();  
+}
+</template>
+</v-two-code>
+
+<v-two-code type="js;js" comment="Стрелочная;Обычная">
+<template v-slot:first>
+(async () => {
+    const a = await AsyncFunction();
+})();
+</template>
+<template v-slot:last>
+(async function() {
+    const a = await AsyncFunction();
+})();
+</template>
+</v-two-code>
+
+<ul class="list-point">
+	<li>Async Function - асинхронная функция (Promise + Generator)</li>
+	<li>Асинхронная функция возвращает <u>Promise</u>, для получения значения используется then</li>
+	<li>await дожидается выполнения <u>Promise</u>, вытаскивает значение и возвращает его</li>
+	<li>await можно использовать только внутри асинхронной функции</li>
+	<li>await необязательно ставить перед вызовом асинхронной фунцкии. это может быть любая функция, возвращающая <u>Promise</u></li>
+</ul>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Примеры</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+<v-code lang="js" title="AJAX-запрос">
+const getResource = async (url) => {
+    const res = await fetch(url);
+    return await res.json();
+}
+
+getResource('https://swapi.co/api/people/1/')
+    .then(body => console.log(body))
+</v-code>
+
+<v-code lang="js" title="Асинхронная функция">
+async function getUser(id) {
+    return { id:1 };   
+}
+
+async function main() {
+    let user = await getUser(1);
+    console.log(user);
+}
+
+main();
+</v-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Использование в классах и объектах</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-code lang="js" title="Свойство объекта">
+const obj = {
+    getUser: async function(id) {
+        //
+    }
+}
+</v-code>
+
+<v-code lang="js" title="Метод объекта">
+const obj = {
+    async getName() {
+        return fetch('https://www.example.com');
+    }
+}
+</v-code>
+
+<v-code lang="js" title="Класс">
+class Obj {
+    async getResource() {
+        return fetch('https://www.example.com');
+    }
+}
+</v-code>
+

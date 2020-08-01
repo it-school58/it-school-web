@@ -1,0 +1,83 @@
+<h2>PHP сессия</h2>
+
+<!------------------------------------------------------------->
+<h4>php/phpSessionLogin.php</h4>
+<!------------------------------------------------------------->
+<v-code lang="php" title="">
+&lt;?php
+	// autho_id == 0  // получить значение сессии при первом запуске страницы 
+	// autho_id == -1 // удалить сессию
+	// autho_id == 1  // добавить в сессию новое значение
+
+	$autho_id       = $_GET[autho_id];
+	$autho_login    = $_GET[autho_login];
+	$autho_password = $_GET[autho_password];
+
+	// стартуем сессию
+	session_start(); 
+
+	// если переменная сессии не установлена, то присваием ей пустое значение
+	if ( !isset($_SESSION['a_login']) ) {
+		$_SESSION['a_login'] = '';
+	}
+	if ( !isset($_SESSION['a_pass']) ) {
+		$_SESSION['a_pass'] = '';
+	}
+
+	// добавляем в сессию новое значение
+	if ($autho_id==1) {
+		$_SESSION['a_login'][0] = $autho_login;
+		$_SESSION['a_pass'][0] = $autho_password;
+	}
+
+	// удаляем сессию
+	if ($autho_id==-1) {
+		unset($_SESSION['a_login']);
+		unset($_SESSION['a_pass']);
+	}
+
+	// возвращаем значения сессии
+	$arr = array($_SESSION['a_login'][0], $_SESSION['a_pass'][0]);
+	echo json_encode($arr);
+?&gt;
+</v-code>
+
+<!------------------------------------------------------------->
+<h4>index.html</h4>
+<!------------------------------------------------------------->
+<v-code lang="html" title="">
+&lt;input type="text" id="users-login"&gt;
+&lt;input type="text" id="users-password"&gt;
+&lt;button onclick="getCookie();"&gt;getCookie&lt;/button&gt;
+&lt;button onclick="setCookie();"&gt;setCookie&lt;/button&gt;
+&lt;button onclick="deleteCookie();"&gt;deleteCookie&lt;/button&gt;
+</v-code>
+
+<!------------------------------------------------------------->
+<h4>js/main.js</h4>
+<!------------------------------------------------------------->
+<v-code lang="js" title="">
+function getCookie() {
+	$.get('php/phpSessionLogin.php', {autho_id:0, autho_login:0, autho_password:0}, function(data) {
+		var arrSession = eval(data);
+		var login = arrSession[0];
+		var password = arrSession[1];
+		$('body').append(login+' '+password);
+	});
+}
+
+function setCookie() {
+    var login = $('#users-login').val();
+    var password = $('#users-password').val();
+	$.get('php/phpSessionLogin.php', {autho_id:1, autho_login:login, autho_password:password}, function(data) {
+		//
+	});
+}
+
+function deleteCookie() {
+	$.get('php/phpSessionLogin.php', {autho_id:-1, autho_login:0, autho_password:0}, function(data) {
+		//
+	});
+}
+</v-code>
+

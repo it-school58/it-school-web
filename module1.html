@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML и CSS</title>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="src/img/favicon.png">
+
+    <script src="src-core/js/utils.js"></script>
+    <!-- Own JavaScript -->
+    <script src="pages/build-module1.js"></script>
+</head>
+<body>
+
+    <div id="container">
+        <div id="menu">
+        	<p style="padding-top: 0" v-html="'<center><b>Модуль 1</b>: HTML и CSS</center>'"></p>
+            <slot v-for="(itemTitle, numTitle) in themesContent">
+                <h4 v-html="'🥑️ '+(numTitle+1)+' '+itemTitle.title"></h4>
+                <ol>
+                    <li v-for="(itemTheme, i) in itemTitle.themes">
+                        <a
+                            class="menu-link"
+                            :id="itemTheme[0]"
+                            :href="'#'+itemTheme[0]"
+                            @click.prevent="buildContent(itemTheme[0])"
+                            v-html="itemTheme[1]"
+                        ></a>
+                    </li>
+                </ol>
+            </slot>
+        </div>
+
+        <div id="content"></div>
+    </div>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="src-core/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="src/css/index.css">
+
+	<!-- Libraries -->
+	<script src="src-core/libs/highlight/highlight.pack.js"></script>
+	<script src="src-core/libs/vue.js"></script>
+
+	<!-- Custom Elements -->
+	<script src="src-core/components-web/custom-elements.js"></script>
+	<link rel="stylesheet" type="text/css" href="src-core/components-web/custom-elements.css">
+
+	<!-- Vue.js Components -->
+	<script src="src-core/components-vue/vue-components.js"></script>
+	<link rel="stylesheet" type="text/css" href="src-core/components-vue/vue-components.css">
+
+	<!-- JavaScript -->
+    <script src="src-core/js/init.js"></script>
+    <script src="src/js/build.js"></script>
+</body>
+</html>

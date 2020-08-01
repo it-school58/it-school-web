@@ -1,0 +1,70 @@
+<h2>AJAX</h2>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Архитектура клиент-сервер</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<img src="img/js/client-server.jpg" width="400px">
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Способы отправки запроса на сервер</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<ol class="list-num">
+    <li>XMLHttpRequest (не используют в явном виде, создаются обертки)</li>
+    <li>Fetch (нативный, полифил для IE)</li>
+    <li>Axios</li>
+</ol>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Формат JSON</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<u-link-wrapper>
+    <a href="http://myjson.com/" target="_blank">JSON server</a>
+    <a href="https://gist.githubusercontent.com/it-school58/c64f97c27eff3d66a4ee43c71fdcf606/raw/9d5af3a3d67671cc71e1dc3c7a1d7fd47d81593b/catalog.json" target="_blank">JSON каталога товаров на Github Gist</a>
+</u-link-wrapper>
+
+<v-code lang="json" title="">
+[
+    {
+        "name": "Apple",
+        "count": 100
+    },
+    {
+        "name": "Orange",
+        "count": 200
+    },
+    {
+        "name": "Lemon",
+        "count": 300
+    }
+]
+</v-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Метод Fetch</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<u-link-wrapper>
+    <a href="https://learn.javascript.ru/fetch" target="_blank">Fetch</a>
+</u-link-wrapper>
+
+<v-code lang="js border" title="">
+// fetch возвращает promise
+const promise = fetch('url для отправки запроса');
+</v-code>
+
+<v-two-code type="js;js" comment="promise;async">
+<template v-slot:first>
+fetch('https://swapi.co/api/people/1/')
+    .then(res => res.json())
+    .then(body => console.log(body))
+    .catch(error => console.log(error.message))
+</template>
+<template v-slot:last>
+const getResource = async (url) => {
+    const res = await fetch(url);
+    return await res.json();
+}
+
+getResource('https://swapi.co/api/people/1/')
+    .then(body => console.log(body))
+</template>
+</v-two-code>

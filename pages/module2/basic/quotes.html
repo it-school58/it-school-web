@@ -1,0 +1,68 @@
+<h2>Виды кавычек. Шаблонные строки. Комментарии</h2>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Виды кавычек</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-code lang="js" title="">
+const str = 'одинарные кавычки';
+const str = "двойные кавычки";
+const str = `обратные кавычки`;
+</v-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Кавычки внутри кавычек</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-code lang="js" title="">
+const a = 'Скажи мне "Привет"';    // двойные кавычки внутри одинарных
+const b = "Скажи мне 'Привет'";    // одинарные кавычки внутри двойных
+const c = 'Скажи мне \'Привет\'';  // экранирование кавычек
+</v-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Шаблонные строки</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-code lang="js" title="">
+const a = `
+	первая строка
+	вторая строка
+`;
+</v-code>
+
+<v-code lang="js" title="">
+// Интерполяция
+const a = 'text'; 
+const b = `строка текста ${a} строка текста`;
+</v-code>
+
+<!------------------------------------------------------------->
+<h4>Сравнение обычных и шаблонных строк</h4>
+<!------------------------------------------------------------->
+<v-two-code type="js;js" comment="Обычная строка;Шаблонная строка">
+<template v-slot:first>
+const user = 'Jack';
+const greet = 'Добрый день, '+user+' '+23;
+
+const html =
+	'&lt;div class="container"&gt;'+
+		'&lt;div class="item"&gt;'+user+'&lt;/div&gt;'+
+	'&lt;/div&gt;';
+</template>
+<template v-slot:last>
+const user = 'Jack';
+const greet = `Добрый день, ${user} 23`;
+
+const html = `
+	&lt;div class="container"&gt;
+		&lt;div class="item"&gt;${user}&lt;/div&gt;
+	&lt;/div&gt;
+`;
+</template>
+</v-two-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Комментарии</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-code lang="js" title="">
+// однострочный комментарий
+/* многострочный комментарий */
+</v-code>

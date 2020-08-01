@@ -1,0 +1,61 @@
+:root {
+	--color-black: 0, 0, 0;
+	--color-green: #4fc08d;
+	--color-light: #f8f9fa;
+	--color-orange: #fdea4c;
+}
+#container {
+	display: flex;
+	height: 100vh;
+}
+#content {
+	flex-grow: 1;
+	overflow: auto;
+	padding: 35px;
+	border-left: 10px solid var(--color-light); 
+}
+#menu {
+	padding: 30px 30px 30px 15px;
+	height: 100%;
+	overflow: auto;
+	flex-shrink: 0;
+	min-width: 250px;
+	max-width: 300px;
+}
+
+/***************************************************
+MENU
+/***************************************************/
+#menu ul {
+	margin: 10px 0;
+}
+#menu h4 {
+	width: 95%;
+	margin: 0 auto;
+	padding: 5px 15px;
+	cursor: default;
+	color: var(--color-green);
+	border-radius: 20px;
+	background-color: var(--color-light);
+}
+#menu a {
+	color: black;
+	display: block;
+	cursor: pointer;
+    font-size: 14px;
+    user-select: none;
+    padding: 2px 0px;
+    text-decoration: none;
+    line-height: 1;
+    border: 2px solid transparent;
+    padding: 5px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#menu a:hover {
+	transition: 0.2s;
+	text-decoration: underline;
+}
+#menu .menu-link-active {
+	border: 2px solid var(--color-orange);
+}

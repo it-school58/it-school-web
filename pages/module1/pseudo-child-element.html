@@ -1,0 +1,19 @@
+<h2>Псевдоклассы (first-child, last-child, nth-child)</h2>
+
+<v-code lang="html" title="">
+&lt;div class="container"&gt;
+	&lt;div class="item"&gt;item-1&lt;/div&gt;
+	&lt;div class="item"&gt;item-2&lt;/div&gt;
+	&lt;div class="item"&gt;item-3&lt;/div&gt;
+	&lt;div class="item"&gt;item-4&lt;/div&gt;
+&lt;/div&gt;
+</v-code>
+
+<v-code lang="css" title="">
+.item:first-child       <u-code-comment># первый элемент (элементы должны быть в wrapper)</u-code-comment>
+.item:last-child        <u-code-comment># последний элемент (элементы должны быть в wrapper)</u-code-comment>
+.item:nth-child(2)      <u-code-comment># второй элемент</u-code-comment>
+.item:nth-child(2n)     <u-code-comment># каждый второй элемент</u-code-comment>
+.item:nth-child(even)   <u-code-comment># каждый четный элемент</u-code-comment>
+.item:nth-child(odd)    <u-code-comment># каждый нечетный элемент</u-code-comment>
+</v-code>

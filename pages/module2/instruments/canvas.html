@@ -1,0 +1,121 @@
+<h2>HTML5 рисование на Canvas</h2>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Информация</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<u-link-wrapper>
+	<a href="https://www.w3schools.com/tags/ref_canvas.asp" target="_blank">https://www.w3schools.com</a>
+	<a href="https://www.pixijs.com/" target="_blank">PixiJS</a>
+	<a href="https://threejs.org/" target="_blank">three.js</a>
+</u-link-wrapper>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>HTML</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-code lang="html" title="">
+&lt;canvas id="canvas" style="display: block; border: 2px solid black;"&gt;
+	Your browser is not supported
+&lt;/canvas&gt;
+</v-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Основы</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+<!------------------------------------------------------------->
+<h4>Выборка и получение контекста</h4>
+<!------------------------------------------------------------->
+<v-code lang="js" title="">
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+canvas.width = 200;
+canvas.height = 200;
+//canvas.width = window.innerWidth;
+//canvas.height = window.innerHeight;
+</v-code>
+
+<!------------------------------------------------------------->
+<h4>Общие свойства</h4>
+<!------------------------------------------------------------->
+<v-code lang="js" title="">
+ctx.fillStyle = 'yellowgreen';
+ctx.strokeStyle = 'black';
+ctx.lineWidth = 4;
+</v-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Объекты</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+<!------------------------------------------------------------->
+<h4>Rectangle</h4>
+<!------------------------------------------------------------->
+<v-two-fix><template v-slot:first>
+<v-code lang="js" title="">
+ctx.fillRect(0,0,100,100);   // fill
+ctx.strokeRect(0,0,100,100); // stroke
+</v-code>
+</template><template v-slot:last>
+<img src="img/js/canvas/rectangle1.png" class="img200">
+</template></v-two-fix>
+
+<!------------------------------------------------------------->
+<h4>Arc</h4>
+<!------------------------------------------------------------->
+<v-two-fix><template v-slot:first>
+<v-code lang="js" title="">
+ctx.beginPath();
+ctx.arc(100, 100, 50, 0, Math.PI*2, false);
+ctx.closePath();
+ctx.fill();   // fill
+ctx.stroke(); // stroke
+</v-code>
+</template><template v-slot:last>
+<img src="img/js/canvas/arc1.png" class="img200">
+</template></v-two-fix>
+
+<ul class="list-point">
+	<b>arc();</b>
+    <li><u-code-text>1</u-code-text> - координаты центра окружности (x)</li>
+    <li><u-code-text>2</u-code-text> - координаты центра окружности (y)</li>
+    <li><u-code-text>3</u-code-text> - радиус</li>
+    <li><u-code-text>4</u-code-text> - start angle (справа)</li>
+    <li><u-code-text>5</u-code-text> - end angle (360deg = pi*2)</li>
+    <li><u-code-text>6</u-code-text> - рисование по часовой (false) / против (true) часовой стрелки</li>
+</ul>
+
+<!------------------------------------------------------------->
+<h4>Line, Path</h4>
+<!------------------------------------------------------------->
+<v-two-fix><template v-slot:first>
+<v-code lang="js" title="">
+ctx.beginPath();
+
+ctx.moveTo(100, 100);
+ctx.lineTo(100, 50);
+ctx.lineTo(200, 100);
+ctx.closePath();
+
+ctx.moveTo(10, 10);
+ctx.lineTo(70, 10);
+ctx.lineTo(10, 70);
+
+ctx.fill();
+ctx.stroke();
+</v-code>
+</template><template v-slot:last>
+<img src="img/js/canvas/path1.png" class="img200">
+</template></v-two-fix>
+
+<!------------------------------------------------------------->
+<h4>Text</h4>
+<!------------------------------------------------------------->
+<v-two-fix><template v-slot:first>
+<v-code lang="js" title="">
+ctx.textAlign = 'center';
+ctx.font = '22px Arial';
+ctx.fillText('Hello World', canvas.width/2, canvas.height/2); // по центру
+</v-code>
+</template><template v-slot:last>
+<img src="img/js/canvas/text1.png" class="img200">
+</template></v-two-fix>

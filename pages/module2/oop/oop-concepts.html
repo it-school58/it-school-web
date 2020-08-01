@@ -1,0 +1,132 @@
+<h2>Объектно-ориентированное программирование</h2>
+
+<ul class="list-point">
+    <li><u-text-define>Объектно-ориентированное программирование</u-text-define> - методология программирования, основанная на представлении программы в виде совокупности объектов, каждый из которых является экземпляром определённого класса, а классы образуют иерархию наследования</li>
+</ul>
+
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>1. Инкапсуляция</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<ul class="list-point">
+    <li><u-text-define>Инкапсуляция</u-text-define> – отделение и защита внутреннего интерфейса от внешнего</li>
+    <li><u-text-underline>Внутренний интерфейс</u-text-underline> – приватные свойства и методы, доступ к которым может быть осуществлен только из других методов класса</li>
+    <li><u-text-underline>Внешний интерфейс</u-text-underline> – публичные свойства и методы класса, предоставляющие доступ к внутренней реализации</li>
+    <li>Мы обращаемся с объектами как с единой сущностью, а не как с набором отдельных полей и методов, тем самым скрываем и защищаем реализацию класса. Если клиентский код не знает ничего, кроме публичного интерфейса, он не может зависеть от деталей реализации</li>
+</ul>
+
+<!------------------------------------------------------------->
+<h4>Геттеры и Сеттеры</h4>
+<!------------------------------------------------------------->
+<ul class="list-point">
+    <li><u-text-define>Геттеры и Сеттеры (Аксессоры)</u-text-define> - доступ к свойствам класса</li>
+</ul>
+
+<v-code lang="js" title="">
+class User {
+    constructor() {
+        this._name = 'Tony';
+    }
+    get name() {
+        return this._name;
+    }
+    set name(value) {
+        this._name = value;
+    }
+}
+
+const user = new User();
+user.name = 'Jack';
+const name = user.name; // => Jack
+</v-code>
+
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>2. Наследование</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<ul class="list-point">
+    <li><u-text-define>Наследование</u-text-define> - описание нового класса на основе уже существующего с частично или полностью заимствующейся функциональностью</li>
+    <li><i><u>SuperClass:</u> базовый, родительский, предок, надкласс, супер класс</i></li>
+    <li><i><u>SubClass:</u> наследник, дочерний, потомок, подкласс, суб класс, производный</i></li>
+</ul>
+
+<v-code lang="js" title="">
+class User {
+    constructor(name) {
+        this.name = name;
+    }
+    getName() {
+        console.log(this.name);
+    }
+}
+
+class Admin <u-code>extends</u-code> User {
+    constructor(name) {
+        <u-code>super</u-code>(name);
+    }
+}
+
+const admin = new Admin('Tony');
+admin.getName();    // => "Tony"
+console.log(admin); // => Object { name: "Tony" }
+</v-code>
+
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>3. Полиморфизм</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<ul class="list-point">
+    <li><u-text-define>Полиморфизм</u-text-define> ("множество форм") - возможность единообразно обрабатывать объекты с различной реализацией при условии наличия общего интерфейса. <u>«Один интерфейс, множество реализаций»</u></li>
+    <li>Позволяет одно и то же имя (например имя метода) использовать для решения внешне схожих, но технически разных задач</li>
+    <hr>
+
+    <li><u-text-define>Абстрактный метод</u-text-define> - метод без реализации</li>
+    <li><u-text-define>Абстрактный класс</u-text-define> - если в классе есть хотя бы 1 абстрактный метод, класс является абстрактным, следовательно мы не можем создать экземпляр класса и воспользоваться им, пока не переопределим этот метод, добавляя различную реализацию в подклассах</li>
+</ul>
+
+<i>«Один интерфейс, множество реализаций». Интерфейс - метод draw(). У него есть несколько вариантов реализаций</i>
+
+<img src="img/js/polymorphism.png" width="550px">
+<br>
+
+<v-code lang="js" title="">
+class Shape {
+    draw() {
+        // нет реализации
+    }
+}
+
+class Circle extends Shape {
+    draw() {
+        // своя реализация для Circle
+    }  
+}
+class Square extends Shape {
+    draw() {
+        // своя реализация для Square
+    }  
+}
+class Triangle extends Shape {
+    draw() {
+        // своя реализация для Triangle
+    }  
+}
+
+const circle = new Circle();
+const square = new Square();
+const triangle = new Triangle();
+
+circle.<u-code>draw()</u-code>;
+square.<u-code>draw()</u-code>;
+triangle.<u-code>draw()</u-code>;
+</v-code>
+
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>4. Абстракция</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<ul class="list-point">
+    <li><u-text-define>Абстракция</u-text-define> способ представления объекта в программе, позволяющий работать с объектами не вдаваясь в особенности их реализации</li>
+    <li>Инкапсуляция помогает реализовать абстракцию. Можно абстрагировать внутренне устройство класса</li>
+</ul>
+

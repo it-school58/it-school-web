@@ -1,0 +1,91 @@
+<h2>События и обработчики событий</h2>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Основные события</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+<!------------------------------------------------------------->
+<h4>Мышь</h4>
+<!------------------------------------------------------------->
+<ul class="list-point">
+	<li><u-code-list>click</u-code-list> - одиночный клик левой кнопки мыши</li>
+	<li><u-code-list>mousedown</u-code-list> - нажатие кнопки мыши</li>
+	<li><u-code-list>mouseup</u-code-list> - отпускание кнопки мыши</li>
+</ul>
+
+<!------------------------------------------------------------->
+<h4>Форма</h4>
+<!------------------------------------------------------------->
+<ul class="list-point">
+	<li><u-code-list>submit</u-code-list> - момент отправки формы обработчику (если кнопка типа "submit")</li>
+</ul>
+
+<!------------------------------------------------------------->
+<h4>Клавиатура</h4>
+<!------------------------------------------------------------->
+<ul class="list-point">
+	<li><u-code-list>keydown</u-code-list> - момент нажатия клавиши, до момента отпускания</li>
+	<li><u-code-list>keyup</u-code-list> - момент отпускания клавиши</li>
+	<li><u-code-list>keypress</u-code-list> - нажатие клавиши на клавиатуре</li>
+</ul>
+
+<!------------------------------------------------------------->
+<h4>Документ</h4>
+<!------------------------------------------------------------->
+<ul class="list-point">
+	<li><u-code-list>load</u-code-list> - возникает после полного окончания загрузки ресурса (всех картинок, стиле и прочего)</li>
+	<li><u-code-list>resize</u-code-list> - изменение размеров окна браузера</li>
+	<li><u-code-list>scroll</u-code-list> - прокрутка страницы</li>
+</ul>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Назначение обработчиков событий</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+<!------------------------------------------------------------->
+<h4>1. Использование атрибута HTML</h4>
+<!------------------------------------------------------------->
+<v-code lang="html" title="">
+&lt;button onclick="action()"&gt;Action&lt;/button&gt;
+</v-code>
+
+<v-code lang="js" title="">
+function action() {
+	alert('hi');
+}
+</v-code>
+
+<!------------------------------------------------------------->
+<h4>2. Использование свойства DOM-объекта</h4>
+<!------------------------------------------------------------->
+<v-code lang="html" title="">
+&lt;button id="element"&gt;Action&lt;/button&gt;
+</v-code>
+
+<v-code lang="js" title="">
+const element = document.querySelector('#element');
+
+element.onclick = function() {
+	alert(1);
+}
+</v-code>
+
+<!------------------------------------------------------------->
+<h4>3. addEventListener</h4>
+<!------------------------------------------------------------->
+<v-code lang="html" title="">
+&lt;button id="element"&gt;Action&lt;/button&gt;
+</v-code>
+
+<v-code lang="js" title="">
+const element = document.querySelector('#element');
+
+element.addEventListener('click', function() {
+	alert(1);
+});
+</v-code>
+
+<u-link-wrapper>
+	<a href="../webnotes/js.html#actions-params" target="_blank">Передаваемый параметр (Event)</a>
+	<a href="https://codepen.io/Sergeenkov/pen/vzxgVg" target="_blank">Keydown Move Cube (пример)</a>
+</u-link-wrapper>

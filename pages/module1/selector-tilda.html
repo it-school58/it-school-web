@@ -1,0 +1,43 @@
+<h2>CSS селекторы (>, +, ~)</h2>
+
+<v-code lang="css" title="">
+ul li > span        <u-code-comment># не все span, а только дочерние span</u-code-comment>
+ul li + li          <u-code-comment># все последующие элементы li</u-code-comment>
+.class1 ~ div       <u-code-comment># все div элементы после class1</u-code-comment>
+.class1 ~ *         <u-code-comment># все элементы после class1</u-code-comment>
+</v-code>
+
+<v-code lang="html" title="">
+&lt;div class="container"&gt;
+	&lt;div&gt;item&lt;/div&gt;
+	&lt;div&gt;item&lt;/div&gt;
+	&lt;div&gt;
+		item
+		&lt;div&gt;inside item&lt;/div&gt;
+		&lt;div&gt;inside item&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;outside&lt;/div&gt;
+&lt;div&gt;outside&lt;/div&gt;
+&lt;p&gt;outside&lt;/p&gt;
+</v-code>
+
+<v-code lang="css" title="">
+body {
+	font-size: 35px;
+}
+.container {
+	background: silver;
+}
+.container > div {
+	border: 4px solid blue;
+	margin: 10px;
+	padding: 10px;
+}
+</v-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Custom Checkbox</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-iframe height="350" src="https://codepen.io/Sergeenkov/embed/LMLjYG?height=265&theme-id=default&default-tab=css,result" />

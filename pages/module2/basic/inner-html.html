@@ -1,0 +1,15 @@
+<h2>Методы innerText и innerHTML</h2>
+
+<v-code lang="html" title="">
+&lt;div id="element"&gt;Element&lt;/div&gt;
+</v-code>
+
+<v-code lang="js" title="">
+const element = document.querySelector('#element');
+
+element.innerText  = 'New Text';                // изменить текст
+element.innerHTML  = '&lt;h2&gt;New HTML Code&lt;/h2&gt;';  // изменить html
+
+const text = element.innerText; // получить текст
+const html = element.innerHTML; // получить html
+</v-code>

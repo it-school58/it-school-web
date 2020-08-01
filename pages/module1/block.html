@@ -1,0 +1,154 @@
+<h2>Блочные элементы (div)</h2>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Особенности блочных элементов</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<ol class="list-num">
+	<li>Элементы на обтекают друг друга</li>
+	<li>Ширина равна 100% от ширины родителя</li>
+	<li>Высота равна высоте контента</li>
+	<li>Можно применять свойства width и height</li>
+</ol>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Внешний отступ (margin)</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-code lang="css" title="">
+div {
+	margin: 10px;                 <u-code-comment># сверху=справа=снизу=слева=10px</u-code-comment>
+	margin: 10px 15px 20px 25px;  <u-code-comment># сверху=10px, справа=15px, снизу=20px, слева=25px</u-code-comment>
+	margin: 10px 20px;            <u-code-comment># сверху=снизу=10px, справа=слева=20px</u-code-comment>
+	margin-top: 10px;             <u-code-comment># отступ сверху</u-code-comment>
+	margin-bottom: 10px;          <u-code-comment># отступ снизу</u-code-comment>
+	margin-left: 10px;            <u-code-comment># отступ слева</u-code-comment>
+	margin-right: 10px;           <u-code-comment># отступ справа</u-code-comment>
+	margin: auto;                 <u-code-comment># центрирование блока по горизонтали</u-code-comment>
+	margin: 0 auto;               <u-code-comment># центрирование блока по горизонтали и задание отступа сверху и снизу=0</u-code-comment>
+}
+</v-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Внутренний отступ (padding)</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-code lang="css" title="">
+div {
+	padding: 10px;                 <u-code-comment># сверху=справа=снизу=слева=10px</u-code-comment>
+	padding: 10px 15px 20px 25px;  <u-code-comment># сверху=10px, справа=15px, снизу=20px, слева=25px</u-code-comment>
+	padding: 10px 20px;            <u-code-comment># сверху=снизу=10px, справа=слева=20px</u-code-comment>
+	padding-top: 10px;             <u-code-comment># отступ сверху</u-code-comment>
+	padding-bottom: 10px;          <u-code-comment># отступ снизу</u-code-comment>
+	padding-left: 10px;            <u-code-comment># отступ слева</u-code-comment>
+	padding-right: 10px;           <u-code-comment># отступ справа</u-code-comment>
+}
+</v-code>
+
+<!------------------------------------------------------------->
+<h4>Обнуление margin и padding у body</h4>
+<!------------------------------------------------------------->
+<ul class="list-point">
+    <li>По умолчанию у body есть отступы</li>
+</ul>
+
+<v-code lang="css" title="">
+body { 
+	margin: 0; 
+	padding: 0; 
+}
+</v-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Ширина (width)</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-code lang="css" title="">
+div {
+	width: 500px;      <u-code-comment># ширина</u-code-comment>
+	max-width: 700px;  <u-code-comment># максимальная ширина</u-code-comment>
+	min-width: 200px;  <u-code-comment># минимальная ширина </u-code-comment>
+}
+</v-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Высота (height)</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-code lang="css" title="">
+div {
+	height: 500px;      <u-code-comment># высота</u-code-comment>
+	max-height: 700px;  <u-code-comment># максимальная высота</u-code-comment>
+	min-height: 200px;  <u-code-comment># минимальная высота</u-code-comment>
+}
+</v-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Рамка (border, border-radius)</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-code lang="css" title="">
+div {
+	border: 2px solid orange;           <u-code-comment># рамка 2px сплошная оранжевая</u-code-comment>
+	border: 2px solid transparent;      <u-code-comment># рамка 2px сплошная прозрачная</u-code-comment>
+	border-top: 2px solid orange;       <u-code-comment># рамка сверху</u-code-comment>
+	border-bottom: 2px solid orange;    <u-code-comment># рамка снизу</u-code-comment>
+	border-left: 2px solid orange;      <u-code-comment># рамка слева</u-code-comment>
+	border-right: 2px solid orange;     <u-code-comment># рамка справа</u-code-comment>
+	border-radius: 10px;                <u-code-comment># радиус для всех четырёх углов</u-code-comment>
+	border-radius: 10px 15px;           <u-code-comment># радиус верхнего левого и нижнего правого уголков = 10px, верхнего правого и нижнего левого углов = 15px;</u-code-comment>
+	border-radius: 10px 15px 20px 25px; <u-code-comment># по очереди устанавливает радиус для верхнего левого, верхнего правого, нижнего правого и нижнего левого углов</u-code-comment>
+}
+</v-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Обводка (outline)</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+<v-code lang="css" title="">
+div {
+	outline: 2px solid orange;          <u-code-comment># обводка 2px сплошная оранжевая</u-code-comment>
+}
+</v-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Тень у блоков (box-shadow)</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<ul class="list-point">
+    <li><u-code-text>1px</u-code-text> - смещение по горизонтали</li>
+    <li><u-code-text>2px</u-code-text> - смещени по вертикали</li>
+    <li><u-code-text>3px</u-code-text> - размытие</li>
+    <li><u-code-text>4px</u-code-text> - толщина</li>
+</ul>
+
+<v-code lang="css" title="">
+div {
+	box-shadow: 1px 2px 3px 4px blue;
+	box-shadow: inset 1px 2px 3px 4px blue;
+}
+</v-code>
+
+<!------------------------------------------------------------->
+<h4>Задание нескольких теней</h4>
+<!------------------------------------------------------------->
+<v-code lang="css" title="">
+div {
+	box-shadow:
+	    0 0 0 5px red,
+	    0 0 0 10px green,
+	    0 0 0 15px blue;
+}
+</v-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Примеры теней у блоков</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-iframe height="350" src="https://codepen.io/Sergeenkov/embed/pYypGp?height=265&theme-id=default&default-tab=html,result" />
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>CSS Overflow </h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<ul class="list-point">
+    <li>Свойство overflow управляет отображением содержания блочного элемента, если оно целиком не помещается и выходит за область заданных размеров</li>
+</ul>
+
+<v-code lang="css" title="">
+div {
+	overflow: auto;   <u-code-comment># добавление полос прокрутки, если контент не помешается в блок</u-code-comment>
+	overflow: hidden; <u-code-comment># обрезка контента, если контент не помешается в блок</u-code-comment>
+}
+</v-code>

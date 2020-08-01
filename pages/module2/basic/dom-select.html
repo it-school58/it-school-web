@@ -1,0 +1,31 @@
+<h2>Выборка элементов страницы</h2>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Объектная модель представления документа</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<ul class="list-point">
+    <li>Объектная модель представления документа. (DOM) Document Object Model</li>
+    <li>Независящий от платформы и языка программирования способ представления документа, позволяющий программам и скриптам получить доступ к содержимому HTML, XHTML и XML документов, а также изменять содержимое, структуру и оформление таких документов</li>
+    <li>Всё содержимое документа представлено в виде иерархии объектов</li>
+    <li>Структура этой иерархии стандартизирована, чтобы обеспечить независимость от платформы</li>
+</ul>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Структура DOM документа</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<img src="img/js/dom.jpg" height="300">
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Выборка элементов страницы</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-code lang="js" title="">
+const a = document.querySelector('.nav.bar');            // возвращает первый элемент внутри документа
+const a = document.querySelectorAll('.nav');             // возвращает список элементов в пределах документа
+</v-code>
+
+<v-code lang="js link-accent" title="">
+const a = document.getElementById('item');               // по id
+const a = document.getElementsByClassName('item')[0];    // по названию класса (первый элемент)
+const a = document.getElementsByName('item');            // по атрибуту name
+const a = document.getElementsByTagName('img');          // по названию тега (все элементы)
+</v-code>

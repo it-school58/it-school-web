@@ -1,0 +1,109 @@
+<h2>AXIOS</h2>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Axios</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-code lang="html" title="">
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"&gt;&lt;/script&gt;
+</v-code>
+
+<!------------------------------------------------------------->
+<h4>GET-запрос с возвратом одного значения</h4>
+<!------------------------------------------------------------->
+<v-code lang="js" title="">
+axios.get('script.php')
+    .then(function(response) {
+        console.log(response.data); // 'Hi'
+    })
+    .catch(function(error) {
+        console.log(error)
+    });
+</v-code>
+
+<v-code lang="php" title="">
+&lt;?php
+    echo 'Hi';
+?&gt;
+</v-code>
+
+<!------------------------------------------------------------->
+<h4>GET-запрос с возвратом нескольких значений (array)</h4>
+<!------------------------------------------------------------->
+<v-code lang="js" title="">
+axios.get('script.php')
+    .then(function(response) {
+		console.log(response.data); // ['Jack', 25]
+    })
+</v-code>
+
+<v-code lang="php" title="">
+&lt;?php
+    $arr = array("Jack", 25);
+    $json = json_encode($arr);
+    echo $json
+?&gt;
+</v-code>
+
+<!------------------------------------------------------------->
+<h4>GET-запрос с возвратом нескольких значений (object)</h4>
+<!------------------------------------------------------------->
+<v-code lang="js" title="">
+axios.get('script.php')
+    .then(function(response) {
+		console.log(response.data); // {name: "Jack", age: 25}
+    })
+</v-code>
+
+<v-code lang="php" title="">
+&lt;?php
+    $arr = array("name" => "Jack", "age" => 25);
+    $json = json_encode($arr);
+    echo $json
+?&gt;
+</v-code>
+
+<!------------------------------------------------------------->
+<h4>POST-запрос</h4>
+<!------------------------------------------------------------->
+<v-code lang="js" title="">
+axios.post('script.php', {
+    name: 'Jack',
+    age: '25'
+})
+	.then(function (response) {
+	    console.log(response.data);
+	})
+</v-code>
+
+<v-code lang="php" title="">
+&lt;?php
+    $content = file_get_contents("php://input");
+    $decoded = json_decode($content, true);
+    echo $decoded[name];
+?&gt;
+</v-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Отправка сообщения на почту</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-code lang="php" title="">
+&lt;?php
+	$to      = 'user1@example.com, user2@example.com'; // получатель или получатели
+	$subject = 'Письмо с сайта';                       // тема письма
+	$message = 'Сообщение';                            // сообщение
+
+	$email = mail($to, $subject, $message);
+	if ($email) {
+	    echo 'Письмо успешно отправлено!';
+	} else {
+	    echo 'Письмо не отправлено!';
+	}
+?&gt;
+</v-code>
+
+<u-link-wrapper>
+	<a href="https://habr.com/ru/company/ruvds/blog/337662/" target="_blank">JavaScript: методы асинхронного программирования</a>
+	<a href="https://ru.hexlet.io/blog/posts/javascript-what-the-heck-is-a-callback" target="_blank">Функции обратного вызова (Collback Function)</a>
+	<a href="https://learn.javascript.ru/promise" target="_blank">Promise</a>
+	<a href="https://www.youtube.com/watch?v=5kAPExqSZ1I" target="_blank">Асинхронные функции</a>
+</u-link-wrapper>

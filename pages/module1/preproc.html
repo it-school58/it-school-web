@@ -1,0 +1,145 @@
+<h2>Препроцессоры CSS (SASS)</h2>
+
+<ul class="list-point">
+    <li><em>1996</em> - CSS</li>
+    <li><em>2006</em> - Sass</li>
+    <li><em>2009</em> - Less</li>
+    <li><em>2010</em> - Stylus</li>
+    <li><em>2013</em> - PostCSS</li>
+</ul>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Популярные препроцессоры</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<div style="display: flex;">
+	<a href="https://sass-scss.ru/"   target="_blank" style="margin: 10px;"><img src="img/css/preproc/sass.svg" height="75"></a>
+	<a href="http://lesscss.org/"     target="_blank" style="margin: 10px;"><img src="img/css/preproc/less.png" height="75"></a>
+	<a href="http://stylus-lang.com/" target="_blank" style="margin: 10px;"><img src="img/css/preproc/stylus.svg" height="75"></a>
+	<a href="https://postcss.org/"    target="_blank" style="margin: 10px;"><img src="img/css/preproc/postcss.png" height="75"></a>
+</div>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>SCSS</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+<!------------------------------------------------------------->
+<h4>Переменные</h4>
+<!------------------------------------------------------------->
+<v-two-code type="css;css" comment="SCSS;CSS">
+<template v-slot:first>
+$width: 1000px;
+$bg-color: green;
+#main {
+	width: $width;
+	background-color: $bg-color;
+}
+</template>
+<template v-slot:last>
+#main {
+	width: 1000px;
+	background-color: green;
+}
+</template>
+</v-two-code>
+
+<!------------------------------------------------------------->
+<h4>Вложенности</h4>
+<!------------------------------------------------------------->
+<v-two-code type="css;css" comment="SCSS;CSS">
+<template v-slot:first>
+#main {
+	width: 100px;
+	p, div {
+		color: black;
+	}
+}
+</template>
+<template v-slot:last>
+#main {
+  width: 100px;
+}
+#main p, #main div {
+	color: black;
+}
+</template>
+</v-two-code>
+
+<!------------------------------------------------------------->
+<h4>Расширение селектора</h4>
+<!------------------------------------------------------------->
+<v-two-code type="css;css" comment="SCSS;CSS">
+<template v-slot:first>
+a {
+	color: blue;
+	&:hover {
+		color: green;
+	}
+}
+</template>
+<template v-slot:last>
+a {
+	color: blue;
+}
+a:hover {
+	color: green;
+}
+</template>
+</v-two-code>
+
+<!------------------------------------------------------------->
+<h4>Операции</h4>
+<!------------------------------------------------------------->
+<v-code lang="css" title="">
++ - / %
+> < <= >= == !=
+</v-code>
+
+<v-two-code type="css;css" comment="SCSS;CSS">
+<template v-slot:first>
+$one: 50px;
+$two: 2;
+#main {
+	padding:{
+		top: $one + 200;
+		bottom: $one / $two;
+		left: $two + px;
+		right: 243px - 231px;
+	}
+	background: trans + parent;
+}
+</template>
+<template v-slot:last>
+#main {
+	padding-top: 250px;
+	padding-bottom: 25px;
+	padding-left: 2px;
+	padding-right: 12px;
+	background: transparent;
+}
+</template>
+</v-two-code>
+
+<!------------------------------------------------------------->
+<h4>Миксины, примеси (@mixin)</h4>
+<!------------------------------------------------------------->
+<ul class="list-point">
+    <li>Позволяют сделать блок стилей, который может быть использован повторно в любом месте документа</li>
+</ul>
+
+<v-two-code type="css;css" comment="SCSS;CSS">
+<template v-slot:first>
+@mixin my-border($color, $width) {
+	border-color: $color;
+	border-width: $width;
+}
+p {
+	@include my-border(red, 2px);
+}
+</template>
+<template v-slot:last>
+p {
+	border-color: red;
+	border-width: 2px;
+}
+</template>
+</v-two-code>
