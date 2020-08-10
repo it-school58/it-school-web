@@ -37,7 +37,7 @@ const ARR_MODULE = [
             ['async/promise',       'Promise'],
             ['async/ajax',          'AJAX запросы на сервер'],
             ['async/async',         'Async Function'],
-            ['async/axios',         'Axios. Отправка сообщения на почту'],
+            ['async/axios',         'Библиотека Axios'],
         ],
     },
     {
