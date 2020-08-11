@@ -41,6 +41,15 @@ const ARR_MODULE = [
         ],
     },
     {
+        title: 'Сборщики и модули',
+        themes: [
+            ['bundlers/nodejs',       'Node.js и NPM'],
+            ['bundlers/bundlers',     'Сборщики: Gulp, Webpack, Parcel'],
+            ['bundlers/modules',      'Модульная система'],
+            ['bundlers/modules-es6',  'ES-6 модули в JavaScript'],
+        ],
+    },
+    {
         title: 'Дополнительно',
         themes: [
             ['advanced/arrow-function',       'Стрелочные функции'],

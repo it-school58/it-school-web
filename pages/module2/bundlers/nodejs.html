@@ -1,0 +1,65 @@
+<h2>Node.js и NPM</h2>
+
+<u-link-wrapper>
+	<a href="https://nodejs.org/en/" target="_blank">Node.js</a>
+	<a href="https://www.npmjs.com/" target="_blank">NPM</a>
+</u-link-wrapper>
+
+<ul class="list-point">
+    <li><u-text-define>Node.js</u-text-define> - программная платформа для JavaScript</li>
+    <li><u-text-define>NPM (Node.js Package Manager)</u-text-define> - менеджер пакетов, входящий в состав Node.js</li>
+</ul>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Команды</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-code lang="bash" title="">
+npm <u-code>init</u-code>                   # инициализация проекта (создание package.json)
+npm <u-code>init</u-code> -y                # инициализация проекта с параметрами по умолчанию
+npm <u-code>i</u-code>                      # установить все пакеты из package.json
+npm <u-code>up</u-code>                     # обновить все пакеты из package.json
+</v-code>
+
+<v-code lang="bash" title="">
+npm <u-code>i --save</u-code> package       # установить package и добавить запись в секцию dependencies package.json 
+npm <u-code>i --save-dev</u-code> package   # установить package и добавить запись в секцию devDependencies package.json
+npm <u-code>i --g</u-code> package          # установить package глобально
+</v-code>
+
+<v-code lang="bash" title="">
+npm <u-code>r</u-code> package              # удалить package
+npm <u-code>up</u-code> package             # обновить package
+npm <u-code>run</u-code> package            # запустить package
+</v-code>
+
+<v-code lang="bash" title="">
+npm <u-code>run</u-code> start              # запуск скрипта "start"
+</v-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>package.json</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<v-code lang="js" title="package.json для Parcel">
+{
+	// название приложения
+	"name": "app",
+
+	// версия приложения                             
+	"version": "1.0.0",
+
+	// скрипт для приложения                       
+	"scripts": {
+		"start": "..."
+	},
+
+	// зависимости
+	"dependencies": {
+		...
+	},
+
+	// зависимости для разработки
+	"devDependencies": {
+		...
+	}
+}
+</v-code>
