@@ -22,11 +22,12 @@ const ARR_MODULE = [
         ],
     },
     {
-        title: 'ООП',
+        title: 'ООП и ФП',
         themes: [
-            ['oop/objects',              'Объекты'],
-            ['oop/class',                'Классы'],                    
-            ['oop/oop-concepts',         'Концепции ООП'],
+            ['paradigms/objects',           'Объекты'],
+            ['paradigms/class',             'Классы'],                    
+            ['paradigms/oop-concepts',      'Концепции ООП'],
+            ['paradigms/fp-concepts',       'Концепции ФП'],
         ],
     },
     {
@@ -44,7 +45,9 @@ const ARR_MODULE = [
         title: 'Сборщики и модули',
         themes: [
             ['bundlers/nodejs',       'Node.js и NPM'],
-            ['bundlers/bundlers',     'Сборщики: Gulp, Webpack, Parcel'],
+            ['bundlers/gulp',         'Сборщик Gulp'],
+            ['bundlers/webpack',      'Сборщик Webpack'],
+            ['bundlers/parcel',       'Сборщик Parcel'],
             ['bundlers/modules',      'Модульная система'],
             ['bundlers/modules-es6',  'ES-6 модули в JavaScript'],
         ],
@@ -78,15 +81,7 @@ const ARR_MODULE = [
 ];
 
 
-
-// [Функции]
 // Варианты объявления функций
 // Параметры функции (ES6)
 // Замыкания
-
-// ФП
-// ES-6 модули + Parcel
 // Gulp
-// Spread-оператор массивов
-// Spread-оператор объектов
-

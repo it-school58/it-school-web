@@ -1,0 +1,134 @@
+<h2>Концепции функционального программирования</h2>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Чистые функции</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<ul class="list-point">
+    <li><u-text-define>Чистые функции</u-text-define> (pure functions) - возвращает один и тот же результат для одинаковых входных данных</li>
+</ul>
+
+<v-two-code type="js;js" comment="Чистая функция;Обычная функция">
+<template v-slot:first>
+function sum(a, b) {
+	rerturn a + b;
+}
+</template>
+<template v-slot:last>
+let current = 77;
+
+function sum(a, b) {
+	rerturn a + b + current;
+}
+</template>
+</v-two-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Функции первого класса</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<ul class="list-point">
+	<li><u-text-define>Функции первого класса</u-text-define> - функция трактуются как объект, то есть может быть передана другим функциям и ее можно вернуть из функций. Так же ее можно присваивать переменным</li>
+</ul>
+
+<v-code lang="js" title="Передача функции в качестве аргумента">
+function getInfo() {
+	console.log('Hello');
+}
+
+function foo(functionInfo) {
+	functionInfo();
+}
+
+foo(getInfo);
+</v-code>
+
+<v-code lang="js" title="Возврат функции из функции">
+function foo(functionInfo) {
+	return function() {
+		console.log('Hello');
+	}
+}
+
+const result = foo();
+result();
+</v-code>
+
+<v-code lang="js" title="Присвоение функции в переменную">
+const foo = function() {
+	console.log('Hello');
+}
+
+foo();
+</v-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Иммутабельность</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<ul class="list-point">
+	<li><u-text-define>Иммутабельность</u-text-define> - свойство объектов не изменяться (н-р строка. строку нельзя поменять на месте, для изменения нужно создать новую строку). Применяется для списков, словарей и т.д. Иммутабельный список - список в который нельзя добавить / удалить элемент, можно только итерироваться по ним. Можно создать новый список который содежит все элементы +1, при этом старый остается валадным</li>
+</ul>
+
+<v-two-code type="js;js" comment="Иммутабельно;Не иммутабельно">
+<template v-slot:first>
+// map - создаёт новый массив с результатом вызова указанной функции для каждого элемента массива
+
+const numbers = [1, 2, 3];
+const doubles = numbers.map((num) => {
+	return num * 2;
+});
+
+console.log(numbers); // => [1, 2, 3]
+console.log(doubles); // => [2, 4, 6]
+</template>
+<template v-slot:last>
+const arr = ['Tony', 'Kate'];
+
+arr.push('Jack');                      // добавление нового элемента в конец массива
+arr.unshift('Jack');                   // добавление нового элемента в начало массива
+arr.pop();                             // удаление элемента из конца массива
+arr.shift();                           // удаление элемента из начала массива
+</template>
+</v-two-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Каррирование функций</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<ul class="list-point">
+	<li><u-text-define>Каррирование функций</u-text-define> - все функции могут быть от одного аргумента. Преобразование функции от пары аргументов в функцию, берущую свои аргументы по одному</li>
+</ul>
+
+<v-code lang="js" title="">
+function multiply(a) {
+    return (b) => {
+        return (c) => {
+            return a * b * c
+        }
+    }
+}
+log(multiply(1)(2)(3)) // 6
+
+//const mul1 = multiply(1);
+//const mul2 = mul1(2);
+//const result = mul2(3);
+//log(result); // 6
+</v-code>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<h3>Рекурсия</h3>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<ul class="list-point">
+	<li><u-text-define>Рекурсия</u-text-define> - рекурсивные функции вызывают сами себя, позволяя операции выполняться снова и снова</li>
+</ul>
+
+<v-code lang="js" title="">
+// Степень pow(x, n) через рекурсию
+
+function pow(x, n) {
+	if (n != 1) { // пока n != 1, сводить вычисление pow(x,n) к pow(x,n-1)
+		return x * pow(x, n - 1);
+	} else {
+		return x;
+	}
+}
+
+console.log( pow(2, 3) ); // 8
+</v-code>
