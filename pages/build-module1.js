@@ -99,7 +99,7 @@ const ARR_MODULE = [
             ['bootstrap',         'Bootstrap (компоненты и модульная сетка)'],
             ['bem',               'БЭМ и другие методологии верстки'],
             ['pixel-perfect',     'Pixel Perfect'],
-            ['chrome',            'Chrome Developer Tools'],
+            ['chrome-dev-tools',  'Chrome DevTools'],
             ['photoshop',         'Adobe Photoshop для верстальщика'],
             ['vk',                'Виджеты ВКонтакте'],
             ['github',            'Хостинг проектов GitHub'],
