@@ -22,7 +22,7 @@
                             class="menu-link"
                             :id="itemTheme[0]"
                             :href="'#'+itemTheme[0]"
-                            @click="buildContent(itemTheme[0])"
+                            @click.prevent="buildContent(itemTheme[0])"
                             v-html="itemTheme[1]"
                         ></a>
                     </li>
@@ -30,16 +30,7 @@
             </slot>
         </div>
 
-        <div id="wrapper">
-            <div id="links">
-                <ul>
-                    <li v-for="itemLink in linksContent">
-                        <a :href="itemLink.href" v-html="'⚡️ '+itemLink.title"></a>
-                    </li>
-                </ul>
-            </div>
-            <div id="content"></div>
-        </div>
+        <div id="content"></div>
     </div>
 
     <!-- CSS -->
@@ -60,7 +51,6 @@
 
 	<!-- JavaScript -->
     <script src="src-core/js/init.js"></script>
-    <script src="pages/links.js"></script>
     <script src="src/js/build.js"></script>
 </body>
 </html>
