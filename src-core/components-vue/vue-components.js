@@ -117,7 +117,7 @@ Vue.component('v-code', {
 Vue.component('v-details', {
 	props: ['title'],
     template: `
-		<details>
+		<details class="v-details">
 			<summary v-html="title"></summary>
 			<slot></slot>
 		</details>
