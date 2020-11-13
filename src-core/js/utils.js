@@ -12,6 +12,7 @@ const emoji = {
     baseball:  '⚾️ ',
     lemon:     '🍋 ',
     avocado:   '🥑 ',
+    coconut:   '🥥 ',
     favorite:  '⭐️ ',
 }
 
@@ -46,6 +47,6 @@ function setActiveLink(file) {
         element.classList.remove('menu-link-active');
     });
 
-    const currentLink = document.getElementById(file);
+    const currentLink = document.getElementById(file+'link');
     currentLink.classList.add('menu-link-active');
 }

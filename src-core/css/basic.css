@@ -12,6 +12,11 @@
 	--color-dark-green:  42, 61, 47;     /*dark green*/
 	--color-blue:        19, 193, 247;   /*blue blue*/
 	--color-yellowgreen: 152, 195, 121;  /*yellowgreen*/
+
+	--box-shadow:
+		0 16px 24px 2px rgba(33,37,41,.02), 
+		0 6px 30px 5px rgba(33,37,41,.04), 
+		0 8px 10px -5px rgba(33,37,41,.1);
 }
 
 body {
@@ -88,10 +93,7 @@ IMAGE
 img {
 	display: block;
 	border-radius: .25rem;
-	box-shadow:
-		0 16px 24px 2px rgba(33,37,41,.02), 
-		0 6px 30px 5px rgba(33,37,41,.04), 
-		0 8px 10px -5px rgba(33,37,41,.1);
+	box-shadow: var(--box-shadow);
 }
 img.center {
 	margin: auto;

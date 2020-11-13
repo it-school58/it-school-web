@@ -13,14 +13,20 @@
 
     <div id="container">
         <div id="menu">
-        	<p style="padding-top: 0" v-html="'<center><b>Модуль 2</b>: JavaScript</center>'"></p>
+            <div id="top">
+                <a href="#links" class="link">
+                    <div class="img"></div>
+					<span v-html="'<b>Модуль 2</b>: JavaScript'"></span>
+                </a>
+            </div>
+
             <slot v-for="(itemTitle, numTitle) in themesContent">
-                <h4 v-html="'🥑️ '+(numTitle+1)+' '+itemTitle.title"></h4>
+                <h4 v-html="themesEmoji+' '+(numTitle+1)+' '+itemTitle.title"></h4>
                 <ol>
                     <li v-for="(itemTheme, i) in itemTitle.themes">
                         <a
                             class="menu-link"
-                            :id="itemTheme[0]"
+                            :id="itemTheme[0]+'link'"
                             :href="'#'+itemTheme[0]"
                             @click="buildContent(itemTheme[0])"
                             v-html="itemTheme[1]"

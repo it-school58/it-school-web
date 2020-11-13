@@ -3,7 +3,8 @@ new Vue({
     el: '#container',
     data: {
         themesContent: null,
-        linksContent: null
+        linksContent: null,
+        themesEmoji: '🥥'
     },
     methods: {
         buildContent(file) {
@@ -35,6 +36,5 @@ new Vue({
     created() {
         const hashPage = location.hash.slice(1);
         hashPage && this.buildContent(hashPage);
-    },
+	},
 });
-
