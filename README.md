@@ -1,7 +1,8 @@
 
-## Модуль 1: HTML и CSS
+## Методичка
+- Вынести темы по модулям в отдельные файлы
+- Заменить ссылки личные, на ссылки только для школы
 
-1. CSS Grid - актуализировать grid-gap
-- https://developer.mozilla.org/ru/docs/Web/CSS/grid-gap
-
-2. Flexbox - проверить новые значения
+## Модули
+- CSS Grid - актуализировать `grid-gap`. https://developer.mozilla.org/ru/docs/Web/CSS/grid-gap
+- Flexbox - проверить новые значения
