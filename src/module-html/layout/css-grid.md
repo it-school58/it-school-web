@@ -1,13 +1,15 @@
 # CSS Grid
 
-[Игра Grid Garden](https://cssgridgarden.com/#ru)
+
+- [A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
+- [Игра Grid Garden](https://cssgridgarden.com/#ru)
 
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 ### Определения
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 - `Grid Track` - расстояние между ближайшими двумя линиями, колонка или строка
-- `Grid Line` - линия, создаваемая Grid Track. grid-gap толщина линии
+- `Grid Line` - линия, создаваемая Grid Track. <u>gap</u> толщина линии
 - `Grid Cell` - ячейка сетки
 - `Grid Area` - область всегда прямоугольная. объединение нескольких ячеек в одну
 - `Line-based placement` - позиционирование на основе линий
@@ -36,9 +38,9 @@ div {
 
 ```css
 div {
-	grid-gap: 20px;         /* расстояние между строками и стобцами (толщина линии) */
-	grid-column-gap: 20px;  /* расстояние между столбцами */
-	grid-row-gap: 20px;     /* расстояние между строками */
+	gap: 20px;         /* расстояние между строками и стобцами (толщина линии) */
+	column-gap: 20px;  /* расстояние между столбцами */
+	row-gap: 20px;     /* расстояние между строками */
 }
 ```
 
@@ -65,7 +67,7 @@ div {
 ```css
 .cards {
 	display: grid;
-	grid-gap: 20px;
+	gap: 20px;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: 200px 200px;
 	grid-template-areas: "header  header  menu"

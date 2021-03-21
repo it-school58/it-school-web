@@ -5,7 +5,3 @@
 - Добавить favicon
 - Добавить страницу `config` для демонстрации виджетов
 - Добавить страницу `Ссылки`
-
-## Модули
-- CSS Grid - актуализировать `grid-gap`. https://developer.mozilla.org/ru/docs/Web/CSS/grid-gap
-- Flexbox - проверить новые значения
