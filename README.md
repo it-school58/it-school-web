@@ -5,4 +5,4 @@
 - Добавить favicon
 - Добавить страницу `config` для демонстрации виджетов
 - Добавить страницу `Ссылки`
-- Настроить поиск
+- Настроить поиск. https://vuepress.vuejs.org/theme/default-theme-config.html#algolia-search
