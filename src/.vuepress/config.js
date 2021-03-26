@@ -205,8 +205,9 @@ module.exports = {
 		search: false,
 	},
 	base: '/webcourses/',
-	title: '🐼 Школа программирования',
+	title: 'Школа программирования',
 	head: [
+		['link', { rel: 'icon', href: '/favicon.svg' }],
 		['meta', { name: 'theme-color', content: '#3eaf7c' }],
 		['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
 		['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
