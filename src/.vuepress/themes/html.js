@@ -104,7 +104,6 @@ const THEME_HTML = [
 			['tools/github',            'Хостинг проектов GitHub'],
 			['tools/vendor',            'Вендорные префиксы. Автопрефиксер'],
 			['tools/structure-project', 'Организация структуры проекта'],
-			['tools/web-servises',      'Ссылки на полезные ресурсы'],
 		]
 	},
 
