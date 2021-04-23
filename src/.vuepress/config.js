@@ -21,8 +21,7 @@ module.exports = {
 			[PATH_JS]: getSidebar(THEME_JS, true),
 			[PATH_PHP]: getSidebar(THEME_PHP, true),
 			[PATH_LINKS]: getSidebar(THEME_LINKS),
-		},
-		search: false,
+		}
 	},
 	base: '/webcourses/',
 	title: 'Школа программирования',
@@ -32,6 +31,7 @@ module.exports = {
 		['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
 		['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
 	],
+	search: true,
 	plugins: [
 		'@vuepress/plugin-back-to-top',
 		'@vuepress/plugin-medium-zoom',
