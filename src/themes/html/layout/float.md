@@ -65,5 +65,5 @@ div {
 #### Float Image
 <v-iframe
 	height="350"
-	src="https://codepen.io/Sergeenkov/embed/ReorRW?height=265&theme-id=default&default-tab=html,result"
+	src="https://codepen.io/it-school58/embed/QWdRwVp?height=265&theme-id=default&default-tab=html,result"
 />

@@ -11,5 +11,5 @@ article {
 
 <v-iframe
 	height="550"
-	src="https://codepen.io/Sergeenkov/embed/bGGvjwv?height=573&theme-id=0&default-tab=css,result"
+	src="https://codepen.io/it-school58/embed/GRragPJ?height=573&theme-id=0&default-tab=css,result"
 />

@@ -22,7 +22,7 @@ module.exports = {
 			[PATH_PHP]: getSidebar(THEME_PHP, true),
 			[PATH_LINKS]: getSidebar(THEME_LINKS),
 		},
-		search: false,
+		search: true,
 	},
 	base: '/webcourses/',
 	title: 'Школа программирования',
