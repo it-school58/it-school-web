@@ -53,7 +53,7 @@
 <!------------------------------------------------------------->
 <v-iframe
     height="370"
-    src="https://codepen.io/Sergeenkov/embed/aKmdvP?height=373&theme-id=default&default-tab=css,result"
+    src="https://codepen.io/it-school58/embed/qBRGEVJ?height=373&theme-id=default&default-tab=css,result"
 />
 
 <!------------------------------------------------------------->
@@ -61,7 +61,7 @@
 <!------------------------------------------------------------->
 <v-iframe
     height="370"
-    src="https://codepen.io/Sergeenkov/embed/ZRpvwV?height=265&theme-id=default&default-tab=css,result"
+    src="https://codepen.io/it-school58/embed/KKaLwem?height=265&theme-id=default&default-tab=css,result"
 />
 
 <!------------------------------------------------------------->

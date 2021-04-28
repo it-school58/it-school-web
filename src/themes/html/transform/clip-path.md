@@ -33,5 +33,5 @@ div {
 
 <v-iframe
 	height="350"
-	src="https://codepen.io/Sergeenkov/embed/pKBbdM?height=265&theme-id=default&default-tab=css,result"
+	src="https://codepen.io/it-school58/embed/gOgJpYr?height=265&theme-id=default&default-tab=css,result"
 />

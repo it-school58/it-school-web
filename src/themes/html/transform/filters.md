@@ -64,5 +64,5 @@ div {
 <!------------------------------------------------------------->
 <v-iframe
 	height="350"
-	src="https://codepen.io/Sergeenkov/embed/WNQXYyw?height=265&theme-id=dark&default-tab=css,result"
+	src="https://codepen.io/it-school58/embed/XWpwJLP?height=265&theme-id=dark&default-tab=css,result"
 />

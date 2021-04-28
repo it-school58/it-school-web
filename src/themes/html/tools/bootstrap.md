@@ -37,6 +37,5 @@
 
 <v-iframe
 	height="550"
-	src="https://codepen.io/Sergeenkov/embed/NQaZMg?height=265&theme-id=default&default-tab=html,result"
+	src="https://codepen.io/it-school58/embed/dyNEoMy?height=265&theme-id=default&default-tab=html,result"
 />
-
