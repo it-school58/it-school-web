@@ -148,5 +148,5 @@ div {
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 <v-iframe
 	height="450"
-	src="https://codepen.io/Sergeenkov/embed/bGEbXxM?height=245&theme-id=dark&default-tab=html,result"
+	src="https://codepen.io/it-school58/embed/zYNQGOM?height=245&theme-id=dark&default-tab=html,result"
 />

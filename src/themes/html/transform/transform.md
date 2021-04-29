@@ -87,7 +87,7 @@ div {
 <!------------------------------------------------------------->
 <v-iframe
 	height="350"
-	src="https://codepen.io/Sergeenkov/embed/KBqwQX?height=265&theme-id=default&default-tab=css,result"
+	src="https://codepen.io/it-school58/embed/PoWvwVZ?height=265&theme-id=default&default-tab=css,result"
 />
 
 <!------------------------------------------------------------->
@@ -95,7 +95,7 @@ div {
 <!------------------------------------------------------------->
 <v-iframe
 	height="350"
-	src="https://codepen.io/Sergeenkov/embed/JZpEBL?height=265&theme-id=default&default-tab=css,result"
+	src="https://codepen.io/it-school58/embed/rNjgaRK?height=265&theme-id=default&default-tab=css,result"
 />
 
 <!------------------------------------------------------------->
@@ -103,5 +103,5 @@ div {
 <!------------------------------------------------------------->
 <v-iframe
 	height="350"
-	src="https://codepen.io/Sergeenkov/embed/eKMmaL?height=265&theme-id=default&default-tab=css,result"
+	src="https://codepen.io/it-school58/embed/bGgyNyg?height=265&theme-id=default&default-tab=css,result"
 />
